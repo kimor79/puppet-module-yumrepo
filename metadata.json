@@ -1,0 +1,20 @@
+{
+  "name": "igromik-yumrepo",
+  "version": "0.0.1",
+  "author": "kimor79@yahoo.com",
+  "summary": "Manages /etc/yum.repos.d/",
+  "license": "BSD",
+  "source": "https://github.com/kimor79/puppet-module-yumrepo",
+  "project_page": "https://github.com/kimor79/puppet-module-yumrepo",
+  "issues_url": "https://github.com/kimor79/puppet-module-yumrepo",
+  "dependencies": [
+    {
+      "name": "puppetlabs-concat",
+      "version_range": ">= 1.0.0"
+    },
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
