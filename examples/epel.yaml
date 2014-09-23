@@ -1,0 +1,63 @@
+# Hiera config to manage the epel-*.repo files
+---
+
+yumrepo::repos:
+  epel:
+    descr: "Extra Packages for Enterprise Linux %{::operatingsystemmajrelease} - $basearch"
+    file: epel
+    mirrorlist: "https://mirrors.fedoraproject.org/metalink?repo=epel-%{::operatingsystemmajrelease}&arch=$basearch"
+    failovermethod: 'priority'
+    enabled: '1'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-%{::operatingsystemmajrelease}"
+    order: '10'
+
+  epel-debuginfo:
+    descr: "Extra Packages for Enterprise Linux %{::operatingsystemmajrelease} - $basearch - Debug"
+    file: epel
+    mirrorlist: "https://mirrors.fedoraproject.org/metalink?repo=epel-debug-%{::operatingsystemmajrelease}&arch=$basearch"
+    failovermethod: 'priority'
+    enabled: '0'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-%{::operatingsystemmajrelease}"
+    gpgcheck: '1'
+    order: '11'
+
+  epel-source:
+    descr: "Extra Packages for Enterprise Linux %{::operatingsystemmajrelease} - $basearch - Source"
+    file: epel
+    mirrorlist: "https://mirrors.fedoraproject.org/metalink?repo=epel-source-%{::operatingsystemmajrelease}&arch=$basearch"
+    failovermethod: 'priority'
+    enabled: '0'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-%{::operatingsystemmajrelease}"
+    gpgcheck: '1'
+    order: '12'
+
+  epel-testing:
+    descr: "Extra Packages for Enterprise Linux %{::operatingsystemmajrelease} - Testing - $basearch"
+    file: epel-testing
+    mirrorlist: "https://mirrors.fedoraproject.org/metalink?repo=testing-epel%{::operatingsystemmajrelease}&arch=$basearch"
+    failovermethod: 'priority'
+    enabled: '0'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-%{::operatingsystemmajrelease}"
+    order: '10'
+
+  epel-testing-debuginfo:
+    descr: "Extra Packages for Enterprise Linux %{::operatingsystemmajrelease} - Testing - $basearch - Debug"
+    file: epel-testing
+    mirrorlist: "https://mirrors.fedoraproject.org/metalink?repo=testing-debug-epel%{::operatingsystemmajrelease}&arch=$basearch"
+    failovermethod: 'priority'
+    enabled: '0'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-%{::operatingsystemmajrelease}"
+    gpgcheck: '1'
+    order: '11'
+
+  epel-testing-source:
+    descr: "Extra Packages for Enterprise Linux %{::operatingsystemmajrelease} - Testing - $basearch - Source"
+    file: epel-testing
+    mirrorlist: "https://mirrors.fedoraproject.org/metalink?repo=testing-source-epel%{::operatingsystemmajrelease}&arch=$basearch"
+    failovermethod: 'priority'
+    enabled: '0'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-%{::operatingsystemmajrelease}"
+    gpgcheck: '1'
+    order: '12'

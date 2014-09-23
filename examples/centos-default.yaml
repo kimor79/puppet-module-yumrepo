@@ -1,0 +1,286 @@
+# Hiera config to manage the default CentOS-*.repo files shipped with CentOS
+---
+
+yumrepo::repos:
+  base:
+    descr: 'CentOS-$releasever - Base'
+    file: CentOS-Base
+    mirrorlist: 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    order: '10'
+  
+  updates:
+    descr: 'CentOS-$releasever - Updates'
+    file: CentOS-Base
+    mirrorlist: 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    order: '20'
+  
+  extras:
+    descr: 'CentOS-$releasever - Extras'
+    file: CentOS-Base
+    mirrorlist: 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    order: '30'
+  
+  centosplus:
+    descr: 'CentOS-$releasever - Plus'
+    file: CentOS-Base
+    mirrorlist: 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus'
+    gpgcheck: '1'
+    enabled: '0'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    order: '40'
+  
+  contrib:
+    descr: 'CentOS-$releasever - Contrib'
+    file: CentOS-Base
+    mirrorlist: 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=contrib'
+    gpgcheck: '1'
+    enabled: '0'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    order: '50'
+
+  debug:
+    descr: 'CentOS-6 - Debuginfo'
+    file: 'CentOS-Debuginfo'
+    baseurl: 'http://debuginfo.centos.org/6/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Debug-%{::operatingsystemmajrelease}"
+    enabled: '0'
+
+  c6-media:
+    descr: 'CentOS-$releasever - Media'
+    file: 'CentOS-Media'
+    baseurl: "file:///media/CentOS/\n        file:///media/cdrom/\n        file:///media/cdrecorder/"
+    gpgcheck: '1'
+    enabled: '0'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+
+  C6.0-base:
+    descr: 'CentOS-6.0 - Base'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.0/os/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '10'
+
+  C6.0-updates:
+    descr: 'CentOS-6.0 - Updates'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.0/updates/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '11'
+
+  C6.0-extras:
+    descr: 'CentOS-6.0 - Extras'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.0/extras/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '12'
+
+  C6.0-contrib:
+    descr: 'CentOS-6.0 - Contrib'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.0/contrib/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '13'
+
+  C6.0-centosplus:
+    descr: 'CentOS-6.0 - CentOSPlus'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.0/centosplus/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '14'
+
+  C6.1-base:
+    descr: 'CentOS-6.1 - Base'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.1/os/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '20'
+
+  C6.1-updates:
+    descr: 'CentOS-6.1 - Updates'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.1/updates/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '21'
+
+  C6.1-extras:
+    descr: 'CentOS-6.1 - Extras'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.1/extras/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '22'
+
+  C6.1-contrib:
+    descr: 'CentOS-6.1 - Contrib'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.1/contrib/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '23'
+
+  C6.1-centosplus:
+    descr: 'CentOS-6.1 - CentOSPlus'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.1/centosplus/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '24'
+
+  C6.2-base:
+    descr: 'CentOS-6.2 - Base'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.2/os/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '30'
+
+  C6.2-updates:
+    descr: 'CentOS-6.2 - Updates'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.2/updates/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '31'
+
+  C6.2-extras:
+    descr: 'CentOS-6.2 - Extras'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.2/extras/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '32'
+
+  C6.2-contrib:
+    descr: 'CentOS-6.2 - Contrib'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.2/contrib/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '33'
+
+  C6.2-centosplus:
+    descr: 'CentOS-6.2 - CentOSPlus'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.2/centosplus/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '34'
+
+  C6.3-base:
+    descr: 'CentOS-6.3 - Base'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.3/os/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '40'
+
+  C6.3-updates:
+    descr: 'CentOS-6.3 - Updates'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.3/updates/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '41'
+
+  C6.3-extras:
+    descr: 'CentOS-6.3 - Extras'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.3/extras/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '42'
+
+  C6.3-contrib:
+    descr: 'CentOS-6.3 - Contrib'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.3/contrib/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '43'
+
+  C6.3-centosplus:
+    descr: 'CentOS-6.3 - CentOSPlus'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.3/centosplus/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '44'
+
+  C6.4-base:
+    descr: 'CentOS-6.4 - Base'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.4/os/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '50'
+
+  C6.4-updates:
+    descr: 'CentOS-6.4 - Updates'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.4/updates/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '51'
+
+  C6.4-extras:
+    descr: 'CentOS-6.4 - Extras'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.4/extras/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '51'
+
+  C6.4-contrib:
+    descr: 'CentOS-6.4 - Contrib'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.4/contrib/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '52'
+
+  C6.4-centosplus:
+    descr: 'CentOS-6.4 - CentOSPlus'
+    file: 'CentOS-Vault'
+    baseurl: 'http://vault.centos.org/6.4/centosplus/$basearch/'
+    gpgcheck: '1'
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-%{::operatingsystemmajrelease}"
+    enabled: '0'
+    order: '53'
