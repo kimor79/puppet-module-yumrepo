@@ -33,11 +33,11 @@
 #
 # === Authors
 #
-# Kimo Rosenbaum <k.rosenbaum@f5.com>
+# Kimo Rosenbaum <kimor79@yahoo.com>
 #
 # === Copyright
 #
-# Copyright 2014 F5 Networks, Inc.
+# Copyright 2014 Kimo Rosenbaum and contributors
 #
 class yumrepo (
   $manage_dir  = $yumrepo::params::manage_dir,
