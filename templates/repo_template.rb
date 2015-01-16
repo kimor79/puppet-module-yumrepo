@@ -1,112 +1,112 @@
 [<%= @name %>]
-<% if @bandwidth -%>
+<% if @bandwidth && @bandwidth != '' -%>
 bandwidth=<%= @bandwidth %>
 <% end -%>
-<% if @baseurl -%>
+<% if @baseurl && @baseurl != '' -%>
 baseurl=<%= @baseurl %>
 <% end -%>
-<% if @cost -%>
+<% if @cost && @cost != '' -%>
 cost=<%= @cost %>
 <% end -%>
-<% if @descr -%>
+<% if @descr&& @descr != ''  -%>
 name=<%= @descr %>
 <% end -%>
-<% if @enabled -%>
+<% if @enabled && @enabled != '' -%>
 enabled=<%= @enabled %>
 <% end -%>
-<% if @enablegroups -%>
+<% if @enablegroups && @enablegroups != '' -%>
 enablegroups=<%= @enablegroups %>
 <% end -%>
-<% if @exclude -%>
+<% if @exclude && @exclude != '' -%>
 exclude=<%= @exclude %>
 <% end -%>
-<% if @failovermethod -%>
+<% if @failovermethod && @failovermethod != '' -%>
 failovermethod=<%= @failovermethod %>
 <% end -%>
-<% if @gpgcakey -%>
+<% if @gpgcakey && @gpgcakey != '' -%>
 gpgcakey=<%= @gpgcakey %>
 <% end -%>
-<% if @gpgcheck -%>
+<% if @gpgcheck && @gpgcheck != '' -%>
 gpgcheck=<%= @gpgcheck %>
 <% end -%>
-<% if @gpgkey -%>
+<% if @gpgkey && @gpgkey != '' -%>
 gpgkey=<%= @gpgkey %>
 <% end -%>
-<% if @http_caching -%>
+<% if @http_caching && @http_caching != '' -%>
 http_caching=<%= @http_caching %>
 <% end -%>
-<% if @include -%>
+<% if @include && @include != '' -%>
 include=<%= @include %>
 <% end -%>
-<% if @includepkgs -%>
+<% if @includepkgs && @includepkgs != '' -%>
 includepkgs=<%= @includepkgs %>
 <% end -%>
-<% if @keepalive -%>
+<% if @keepalive && @keepalive != '' -%>
 keepalive=<%= @keepalive %>
 <% end -%>
-<% if @key_id -%>
+<% if @key_id && @key_id != '' -%>
 key_id=<%= @key_id %>
 <% end -%>
-<% if @metadata_expire -%>
+<% if @metadata_expire && @metadata_expire != '' -%>
 metadata_expire=<%= @metadata_expire %>
 <% end -%>
-<% if @metalink -%>
+<% if @metalink && @metalink != '' -%>
 metalink=<%= @metalink %>
 <% end -%>
-<% if @mirrorlist -%>
+<% if @mirrorlist && @mirrorlist != '' -%>
 mirrorlist=<%= @mirrorlist %>
 <% end -%>
-<% if @mirrorlist_expire -%>
+<% if @mirrorlist_expire && @mirrorlist_expire != '' -%>
 mirrorlist_expire=<%= @mirrorlist_expire %>
 <% end -%>
-<% if @priority -%>
+<% if @priority && @priority != '' -%>
 priority=<%= @priority %>
 <% end -%>
-<% if @protect -%>
+<% if @protect && @protect != '' -%>
 protect=<%= @protect %>
 <% end -%>
-<% if @provider -%>
+<% if @provider && @provider != '' -%>
 provider=<%= @provider %>
 <% end -%>
-<% if @proxy -%>
+<% if @proxy && @proxy != '' -%>
 proxy=<%= @proxy %>
 <% end -%>
-<% if @proxy_password -%>
+<% if @proxy_password && @proxy_password != '' -%>
 proxy_password=<%= @proxy_password %>
 <% end -%>
-<% if @proxy_username -%>
+<% if @proxy_username && @proxy_username != '' -%>
 proxy_username=<%= @proxy_username %>
 <% end -%>
-<% if @retries -%>
+<% if @retries && @retries != '' -%>
 retries=<%= @retries %>
 <% end -%>
-<% if @secret_key -%>
+<% if @secret_key && @secret_key != '' -%>
 secret_key=<%= @secret_key %>
 <% end -%>
-<% if @s3_enabled -%>
+<% if @s3_enabled && @s3_enabled != '' -%>
 s3_enabled=<%= @s3_enabled %>
 <% end -%>
-<% if @skip_if_unavailable -%>
+<% if @skip_if_unavailable && @skip_if_unavailable != '' -%>
 skip_if_unavailable=<%= @skip_if_unavailable %>
 <% end -%>
-<% if @sslcacert -%>
+<% if @sslcacert && @sslcacert != '' -%>
 sslcacert=<%= @sslcacert %>
 <% end -%>
-<% if @sslclientcert -%>
+<% if @sslclientcert && @sslclientcert != '' -%>
 sslclientcert=<%= @sslclientcert %>
 <% end -%>
-<% if @sslclientkey -%>
+<% if @sslclientkey && @sslclientkey != '' -%>
 sslclientkey=<%= @sslclientkey %>
 <% end -%>
-<% if @sslverify -%>
+<% if @sslverify && @sslverify != '' -%>
 sslverify=<%= @sslverify %>
 <% end -%>
-<% if @target -%>
+<% if @target && @target != '' -%>
 target=<%= @target %>
 <% end -%>
-<% if @throttle -%>
+<% if @throttle && @throttle != '' -%>
 throttle=<%= @throttle %>
 <% end -%>
-<% if @timeout -%>
+<% if @timeout && @timeout != '' -%>
 timeout=<%= @timeout %>
 <% end -%>
