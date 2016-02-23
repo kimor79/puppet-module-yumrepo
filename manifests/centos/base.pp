@@ -25,7 +25,7 @@ class yumrepo::centos::base (
   yumrepo::repo { 'centos-updates':
     baseurl    => $updates_baseurl,
     descr      => 'CentOS-$releasever - Updates',
-    file       => CentOS-Base,
+    file       => 'CentOS-Base',
     mirrorlist => $updates_mirrorlist,
     gpgcheck   => '1',
     gpgkey     => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-${::operatingsystemmajrelease}",

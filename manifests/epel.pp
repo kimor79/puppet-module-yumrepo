@@ -11,7 +11,7 @@ class yumrepo::epel (
   yumrepo::repo { 'epel':
     baseurl        => $epel_baseurl,
     descr          => "Extra Packages for Enterprise Linux %{::operatingsystemmajrelease} - \$basearch",
-    file           => epel,
+    file           => 'epel',
     mirrorlist     => $epel_mirrorlist,
     failovermethod => 'priority',
     enabled        => '1',
@@ -23,7 +23,7 @@ class yumrepo::epel (
   yumrepo::repo { 'epel-debuginfo':
     baseurl        => $debuginfo_baseurl,
     descr          => "Extra Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Debug",
-    file           => epel,
+    file           => 'epel',
     mirrorlist     => $debuginfo_mirrorlist,
     failovermethod => 'priority',
     enabled        => '0',
@@ -35,7 +35,7 @@ class yumrepo::epel (
   yumrepo::repo { 'epel-source':
     baseurl        => $source_baseurl,
     descr          => "Extra Packages for Enterprise Linux ${::operatingsystemmajrelease} - \$basearch - Source",
-    file           => epel,
+    file           => 'epel',
     mirrorlist     => $source_mirrorlist,
     failovermethod => 'priority',
     enabled        => '0',
