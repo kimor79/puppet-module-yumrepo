@@ -1,3 +1,4 @@
+
 [<%= @name %>]
 <% if @async && @async != '' -%>
 async=<%= @async %>
