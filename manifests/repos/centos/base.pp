@@ -1,5 +1,5 @@
 # CentOS Base repos
-class yumrepo::centos::base (
+class yumrepo::repos::centos::base (
   $base_baseurl          = undef,
   $base_mirrorlist       = 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os',
   $centosplus_baseurl    = undef,

@@ -1,5 +1,5 @@
 # Epel repos
-class yumrepo::epel (
+class yumrepo::repos::epel (
   $debug_baseurl     = undef,
   $debug_mirrorlist  = "https://mirrors.fedoraproject.org/metalink?repo=epel-debug-${::operatingsystemmajrelease}&arch=\$basearch",
   $epel_baseurl      = undef,
